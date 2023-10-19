@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let txt = ""
+        let txt2 = ""
+        const beatles = ["ringo", "paul", "george", "john"]
+
+        const inLoop = (value, index, array) => {
+            txt += value.toUpperCase()
+        }
+        beatles.forEach(inLoop)
+        console.log(txt)
+
+        
+        beatles.forEach( (value, index, array) => {
+            txt2 += `${ value.toUpperCase() } - `
+        })
+        console.log(txt2)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
