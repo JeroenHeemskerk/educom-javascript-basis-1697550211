@@ -5,14 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        let total = 0
-        for(let num = 0; num <= 100; num++) {
-            const modules = num % 2
-            if(modules == 1){
-                total += num
+        const doSomething = (num) => {
+        for(num <= 100; num++;) {
+                const modules = num % 2
+                if(modules == 1){
+                    return true
+                }else if(modules == 0){
+                    return false
+                }
             }
         }
-        console.log(`totaal: ${ total }`)
+        let result = doSomething(4)
+        console.log(result)
     </script>
 </head>
 <body>
