@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        for (let i = 0; i < 10; i++) {
-            console.log(`i waarde: ${ i }`)
+        let total = 0
+        for(let num = 0; num <= 100; num++) {
+            const modules = num % 2
+            if(modules == 1){
+                total += num
+            }
         }
-        let e = 40
-        while(e > 20) {
-            console.log(`e waarde: ${ e }`)
-            e-- 
-        }
+        console.log(`totaal: ${ total }`)
     </script>
 </head>
 <body>
