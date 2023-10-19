@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const shopping_cart = [
+            { id: 1, name: "HTML Book", price: 12.50 },
+            { id: 2, name: "CSS Book", price: 10.00 },
+            { id: 3, name: "JavaScript Book", price: 20.00 }
+        ]
+
+        let total = 0
+        shopping_cart.forEach( (item) => {
+            total += item.price
+        })
+
+        console.log(`totaal: ${total}`)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
