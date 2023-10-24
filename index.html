@@ -4,13 +4,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>vue</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        .box {
+            padding: 100px 0;
+            width: 400px;
+            text-align: center;
+            background: #ddd;
+            margin: 20px;
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
     <h1>test</h1>
 
     <div id="app">
+
+        <!-- <a :href="url">website</a> -->
         <div v-if="showBooks">
-            <p>{{ title }} - {{ author }} - {{ age }}</p>
+            <ul>
+                <li v-for="book in books" :class="{ fav: book.isFav }">
+                    <img :src="book.img" :alt="book.title">
+                    <h3>{{ book.title }}</h3>
+                    <h3>{{ book.author }}</h3>
+                </li>
+            </ul>
         </div>
 
         <button @click="toggleShowBooks">
@@ -18,8 +36,12 @@
             <span v-else>Show Books</span>
         </button>
 
-        <div v-show="showBooks">boeken zijn te zien</div>
-        <div v-show="!showBooks">boeken zijn niet te zien</div>
+        <br>
+        <div class="box" @mouseover="handleEvent($event, 5)">mouseover (enter)</div>
+        <div class="box" @mouseleave="handleEvent">mouseleave</div>
+        <div class="box" @dblclick="handleEvent">double click</div>
+        <div class="box" @mousemove="handleMousemove">position - {{ x }} - {{ y }}</div>
+
     </div>
 
     <script src="app.js"></script>
