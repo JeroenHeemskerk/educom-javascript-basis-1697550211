@@ -8,9 +8,6 @@ const app = Vue.createApp({
         }
     },
     methods: {
-        changeTitle(title) {
-            this.title = title
-        },
         toggleShowBooks() {
             this.showBooks = !this.showBooks
         }
