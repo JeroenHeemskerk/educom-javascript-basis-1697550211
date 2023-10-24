@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class voedsel {
+            naam = ""
+            houdbaar = 0
+
+            constructor(naam, houdbaar){
+                this.naam = naam
+                this.houdbaar = houdbaar
+            }
+            getName() {
+                return(this.naam)
+            }
+            getExp() {
+                return(this.houdbaar)
+            }
+            changeExp($exp) {
+                this.houdbaar = $exp
+            }
+        }
+        var voedsellist = [];
+        function addNewvoedsel() {
+            var x = document.getElementById("classform");
+            name = x.elements[0].value;
+            houdbaar = x.elements[1].value;
+            const nieuwvoedsel = new voedsel(name, houdbaar)
+
+            voedsellist.push(" naam: " + nieuwvoedsel.getName())
+            voedsellist.push(" houdbaar: " + nieuwvoedsel.getExp() + " dagen")
+            document.getElementById("voedsellist").innerHTML = voedsellist;
+        }
+        function changeNameVoedsel() {
+            var x = document.getElementById("expform");
+            houdbaar = x.elements[0].value;
+            nieuwvoedsel.changeExp(houdbaar)
+            document.getElementById("voedsellist").innerHTML = voedsellist;
+        }
+        var list = []; 
+        getList();
+
+        function addNew() {
+            var x = document.getElementById("form");
+            var text = x.elements[0].value;
+            list.push(text);
+            getList();
+        }
+
+        function addApple() { 
+            list.push("Apple");
+            getList();
+        }
+        function addSpoon() { 
+            list.push("Spoon");
+            getList();
+        }
+        function removeAll() {
+            for (var i = 0; i < list.length;){
+                list.pop();
+            }
+            getList();
+        }
+        function oops() { 
+            list.pop();
+            getList();
+        }
+        function sort() { 
+            list.sort();
+            getList();
+        }
+        function getList() {
+            document.getElementById("list").innerHTML = list;
+        }
+    </script>
+</head>
+<body>
+
+    <form id="classform">
+        <p>vul hier een nieuw soort voedsel in: </p>
+        naam: <input type="text" name="name">
+        houdbaar: <input type="text" name="exp">
+        <input type="button" onclick="addNewvoedsel()" value="Submit"><br>
+    </form>
+    <form id="expform">
+        <p>verander de houdbaarheid van het voedsel: </p>
+        houdbaar: <input type="text" name="newexp">
+        <input type="button" onclick="changeNameVoedsel()" value="Submit"><br>
+    </form>
+    <p id="voedsellist"></p>
+    <form id="form">
+        Add: <input type="text" name="new">
+        <input type="button" onclick="addNew()" value="Submit"><br>
+    </form>
+    <p><button onclick="addApple()">Add apple</button></p>
+    <p><button onclick="addSpoon()">Add spoon</button></p>
+    <p><button onclick="removeAll()">Remove all</button></p>
+    <p><button onclick="oops()">Remove last</button></p>
+    <p><button onclick="sort()">Sort list</button></p>
+    <p><button onclick="location.href = '02-output.html';" id="myButton">output</button></p>
+    <p id="list"></p>
+</body>
+</html>
