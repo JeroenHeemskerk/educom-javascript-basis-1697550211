@@ -8,20 +8,19 @@ const app = Vue.createApp({
                 { title: 'dagboek van een loser deel 2', author: 'jeff', img: 'assets/2.jpg', isFav: false},
                 { title: 'empire', author: 'steven', img: 'assets/1.jpg', isFav: false}
             ],
-            x: 0,
-            y: 0
         }
     },
     methods: {
         toggleShowBooks() {
             this.showBooks = !this.showBooks
         },
-        handleEvent(e, data) {
-            console.log(e, e.type, data)
+        toggleFav(book){
+            book.isFav = !book.isFav
         },
-        handleMousemove(e) {
-            this.x = e.offsetX
-            this.y = e.offsetY
+    },
+    computed: {
+        filteredBooks() {
+            return this.books.filter((book) => book.isFav)
         }
     }
 })
