@@ -35,23 +35,9 @@
 </head>
 <body>
     <h1>test</h1>
-    <div id="app">
-        <!-- <a :href="url">website</a> -->
-        <div v-if="showBooks">
-            <ul>
-                <!-- je kunt hier ook filteredBooks van maken-->
-                <li @click="toggleFav(book)" v-for="book in books" :class="{ fav: book.isFav }">
-                    <img :src="book.img" :alt="book.title">
-                    <h3>{{ book.title }}</h3>
-                    <h3>{{ book.author }}</h3>
-                </li>
-            </ul>
-        </div>
-        <button @click="toggleShowBooks">
-            <span v-if="showBooks">Hide Books</span>
-            <span v-else>Show Books</span>
-        </button>
-    </div>
+    <div id="app"></div>
+    <div class="modals"></div>
+
     <script src="app.js"></script>
 </body>
 </html>

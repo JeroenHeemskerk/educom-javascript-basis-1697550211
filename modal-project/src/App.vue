@@ -1,9 +1,26 @@
 <template>
   <div>
     <h1>{{ title }}</h1>
-    <Modal />
-    <input type="text" ref="name">
-    <button @click="handleClick">klik</button>
+    <p>welkom</p>
+    <div v-if="showModal">
+      <Modal theme="sale" @close="toggleModal">
+        <h1>Login</h1>
+        <p>doe het nu</p>
+
+        <template v-slot:links>
+          <a href="#">registeer</a>
+          <a href="#">doe het nu</a>
+        </template>
+      </Modal>
+    </div>
+    <div v-if="showModal2">
+      <Modal @close="toggleModal2">
+        <h1>geheime modal</h1>
+        <p>welkom</p>
+      </Modal>
+    </div>
+    <button @click="toggleModal">open modal</button>
+    <button @click="toggleModal2">open geheime modal</button>
   </div>
 </template>
 
@@ -15,14 +32,17 @@ export default {
   components: { Modal },
   data() {
     return {
-      title: 'Eerste vue app met titel'
+      title: 'Eerste vue app met titel',
+      showModal: false,
+      showModal2: false
     }
   },
   methods: {
-    handleClick() {
-      console.log(this.$refs.name)
-      this.$refs.name.classList.add('active')
-      this.$refs.name.focus()
+    toggleModal() {
+      this.showModal = !this.showModal
+    },
+    toggleModal2() {
+      this.showModal2 = !this.showModal2
     }
   }
 }
