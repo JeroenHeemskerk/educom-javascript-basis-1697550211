@@ -1,0 +1,24 @@
+{
+    "posts": [
+        {
+            "id": 1,
+            "title": "welcome to the blog",
+            "body": "Lorem ipsum dolor sit amet. Ut deserunt vitae qui illum soluta sed nemo libero ad internos ullam qui iste maiores ab galisum molestiae. Qui laudantium eveniet aut consequatur quas est quia dolores et molestiae doloribus in pariatur voluptas sit possimus porro? Est minus praesentium non voluptatem voluptatibus qui autem inventore aut minus amet et perspiciatis nemo et sequi deleniti ad inventore Quis. Et galisum quaerat At voluptatem impedit et sequi amet ex tenetur tempora.Sed fugit modi ex impedit voluptas et quia quibusdam et dignissimos veritatis aut consectetur provident At corporis corrupti ad omnis reiciendis. Vel accusamus nihil ut consequuntur molestiae qui eaque maiores in maxime cumque sit nobis alias et aliquid repellendus. Sed ducimus assumenda quo atque dicta et commodi officia in suscipit quasi.Nam fugit asperiores et harum temporibus in omnis veniam aut consequatur amet cum quidem dicta id enim sint. Et nostrum assumenda rem aperiam nulla est voluptatem reiciendis! Et iste vero non sunt harum vel alias delectus.",
+            "tags": [
+                "webdev",
+                "coding",
+                "news"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "top 5 CSS tips",
+            "body": "lorem ipsum",
+            "tags": [
+                "css",
+                "webdev",
+                "coding"
+            ]
+        }
+    ]
+}
