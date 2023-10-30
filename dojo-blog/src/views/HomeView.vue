@@ -1,31 +1,43 @@
 <template>
   <div class="home">
-    <p>home...</p>
-    <p ref="p">name: {{ name }} en age: {{ age }}</p>
-    <button @click="handleClick">klik me</button>
-    <button @click="age++" >get 1 year older</button>
-    <input type="text" v-model="name">
+    <h1>Home</h1>
+    <input type="text" v-model="search">
+    <p>search term - {{ search }}</p>
+    <div v-for="name in matchingNames" :key="name">
+      {{ name }}
+    </div>
+    <button @click="handleClick">stop watch</button>
   </div>
 </template>
 
 <script>
-import { ref, reactive } from 'vue'
+import { ref, reactive, computed, watch, watchEffect } from 'vue'
 
 export default {
   name: 'HomeView',
   setup() {
+    const search = ref('')
+    const names = ref(['mario', 'luigi', 'toad', 'bowser', 'koopa', 'peach'])
 
-    const name = ref('Mario')
-    const age = ref(35)
+    const stopWatch = watch(search, () => {
+      console.log('watch function run')
+    })
 
+    const stopEffect = watchEffect(() => {
+      console.log("watch effect runs", search.value)
+    })
+
+    const matchingNames = computed(() => {
+      return names.value.filter((name) => name.includes(search.value))
+    })
     const handleClick = () => {
-      name.value = 'Luigi'
-      age.value = 30
+      stopWatch()
+      stopEffect()
     }
-
     return { 
-      name,
-      age,
+      names,
+      search,
+      matchingNames,
       handleClick
     }
   }
